@@ -4,35 +4,54 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private AudioSource audioSource;
+    private bool isColliding = false;
+    private AudioSource NoteAudioSource;
+    public GameObject HeartNoteGO;
     private void Start()
     {
         // Get the AudioSource component once in the Start method.
-        audioSource = GetComponent<AudioSource>();
+        NoteAudioSource = HeartNoteGO.GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (Input.GetButton("Space"))
-        {
-            Debug.Log("Hit");
-            if (audioSource != null)
-            {
-                audioSource.Play();
-            }
-        }
-
-    }
-
-    public float MoveSpeed = 10f;
+    public float CursorMoveSpeed = 10f;
     private float minX = -4f, maxX = -4f, minY = -3.44f, maxY = 5.5f;
     void Update()
     {
+        if (Input.GetButton("Space") && isColliding)
+        {
+            Debug.Log("Spacebar pressed while colliding with HeartNote");
+            PlayNoteAudio();
+        }
+        
+        //Clamps player movement to set space
         float myVal = Input.GetAxis("Mouse Y");
-        transform.Translate(0, myVal * MoveSpeed, 0);
+        transform.Translate(0, myVal * CursorMoveSpeed, 0);
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX),
                   Mathf.Clamp(transform.position.y, minY, maxY), 6f);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Note"))
+        {
+            isColliding = true;
+            Debug.Log("Player collided with HeartNote");
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Note"))
+        {
+            isColliding = false;
+        }
+    }
+
+    private void PlayNoteAudio ()
+    {
+        if (NoteAudioSource != null)
+        {
+            NoteAudioSource.Play();
+        }
+    }
 }

@@ -110,4 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c007a248c9d1f9941bf9ea310f4cc1ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1
+  HeartNoteGO: {fileID: 8414439793409672369, guid: 01513787b5becb4489833d0ab8955fd3, type: 3}
+  CursorMoveSpeed: 2
