@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float MoveSpeed = 10f;
-    private float minX = -4f, maxX = -4f, minY = -3.44f, maxY = 5.5f;
-
-    void Start()
+    private AudioSource audioSource;
+    private void Start()
     {
-        
+        // Get the AudioSource component once in the Start method.
+        audioSource = GetComponent<AudioSource>();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (Input.GetButton("Space"))
+        {
+            Debug.Log("Hit");
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+        }
+
+    }
+
+    public float MoveSpeed = 10f;
+    private float minX = -4f, maxX = -4f, minY = -3.44f, maxY = 5.5f;
     void Update()
     {
         float myVal = Input.GetAxis("Mouse Y");
@@ -20,4 +34,5 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX),
                   Mathf.Clamp(transform.position.y, minY, maxY), 6f);
     }
+
 }
