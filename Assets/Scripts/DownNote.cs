@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeartNote : MonoBehaviour
+public class DownNote : MonoBehaviour
 {
-    public float Speed = 1f;
+    public float Speed = 10f;
 
     private bool isColliding = false;
-    
+
     private AudioSource NoteAudioSource;
     public GameObject HeartNoteGO;
 
@@ -21,7 +21,7 @@ public class HeartNote : MonoBehaviour
     {
         transform.Translate(0, Speed * Time.deltaTime, 0);
 
-        if (Input.GetButton("Space") && isColliding)
+        if (Input.GetButton("S") && isColliding)
         {
             //Debug.Log("Spacebar pressed while colliding with HeartNote");
             PlayNoteAudio();
