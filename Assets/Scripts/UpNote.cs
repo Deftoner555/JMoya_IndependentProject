@@ -21,7 +21,7 @@ public class UpNote : MonoBehaviour
     {
         transform.Translate(-Speed * Time.deltaTime, 0, 0);
 
-        if (Input.GetButton("W") && isColliding)
+        if (Input.GetButtonDown("W") && isColliding)
         {
             //Debug.Log("Spacebar pressed while colliding with HeartNote");
             PlayNoteAudio();

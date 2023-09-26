@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7420590593984149707}
   - component: {fileID: 6399769808782843511}
-  - component: {fileID: 7798461681771358689}
   - component: {fileID: 6095039963022492355}
+  - component: {fileID: 1401987883233013063}
   m_Layer: 0
   m_Name: Left Note
-  m_TagString: Untagged
+  m_TagString: Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,20 +51,6 @@ CapsuleCollider:
   m_Height: 1.6331468
   m_Direction: 1
   m_Center: {x: 1.3569955, y: 0.2415793, z: 0}
---- !u!114 &7798461681771358689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7420590593984149704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4f9ef1e89c7264bb9aeda0d45a79da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 10
-  HeartNoteGO: {fileID: 7420590593984149704}
 --- !u!82 &6095039963022492355
 AudioSource:
   m_ObjectHideFlags: 0
@@ -161,6 +147,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1401987883233013063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420590593984149704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4509885b75c584393ef6dc945cbafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeartNoteGO: {fileID: 7420590593984149704}
 --- !u!1 &7420590594171345118
 GameObject:
   m_ObjectHideFlags: 0

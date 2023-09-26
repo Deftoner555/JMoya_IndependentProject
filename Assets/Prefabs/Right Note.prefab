@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7420590593984149707}
   - component: {fileID: 6399769808782843511}
   - component: {fileID: 6537606330526600455}
-  - component: {fileID: 7582759319612424289}
+  - component: {fileID: 4353786419006750102}
   m_Layer: 0
   m_Name: Right Note
-  m_TagString: Untagged
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7582759319612424289
+--- !u!114 &4353786419006750102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,10 +156,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7420590593984149704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b0017563bea66d429f174908a4cae27, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d4509885b75c584393ef6dc945cbafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
   HeartNoteGO: {fileID: 7420590593984149704}
 --- !u!1 &7420590594171345118
 GameObject:

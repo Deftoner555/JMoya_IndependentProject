@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Note
+  - Heart
+  - Up
+  - Down
+  - Left
+  - Right
   layers:
   - Default
   - TransparentFX

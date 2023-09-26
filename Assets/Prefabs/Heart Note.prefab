@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7563691177833472774}
   m_Layer: 0
   m_Name: Heart Note
-  m_TagString: Note
+  m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,5 +208,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4509885b75c584393ef6dc945cbafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
   HeartNoteGO: {fileID: 8414439793409672369}

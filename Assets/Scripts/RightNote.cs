@@ -21,9 +21,8 @@ public class RightNote : MonoBehaviour
     {
         transform.Translate(Speed * Time.deltaTime, 0, 0);
 
-        if (Input.GetButton("D") && isColliding)
+        if (Input.GetButtonDown("D") && isColliding)
         {
-            //Debug.Log("Spacebar pressed while colliding with HeartNote");
             PlayNoteAudio();
         }
     }

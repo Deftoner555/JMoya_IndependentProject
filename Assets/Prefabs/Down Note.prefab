@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7420590593984149707}
   - component: {fileID: 6399769808782843511}
   - component: {fileID: 2280509448252842676}
-  - component: {fileID: 7994712281872316791}
+  - component: {fileID: -1898712020300245314}
   m_Layer: 0
   m_Name: Down Note
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.371567
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -147,7 +147,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7994712281872316791
+--- !u!114 &-1898712020300245314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,10 +156,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7420590593984149704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88d6002afc3266f42b90a812fc2ed983, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d4509885b75c584393ef6dc945cbafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
   HeartNoteGO: {fileID: 7420590593984149704}
 --- !u!1 &7420590594171345118
 GameObject:

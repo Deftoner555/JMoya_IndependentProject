@@ -21,9 +21,8 @@ public class LeftNote : MonoBehaviour
     {
         transform.Translate(-Speed * Time.deltaTime, 0, 0);
 
-        if (Input.GetButton("A") && isColliding)
+        if (Input.GetButtonDown("A") && isColliding)
         {
-            //Debug.Log("Spacebar pressed while colliding with HeartNote");
             PlayNoteAudio();
         }
     }
