@@ -74,7 +74,7 @@ public class HeartNote : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0, Speed * Time.deltaTime, 0);
+        transform.Translate(-Speed * Time.deltaTime, 0, 0);
 
         if (Input.GetButtonDown("Space") && isColliding && isHeart)
         {
