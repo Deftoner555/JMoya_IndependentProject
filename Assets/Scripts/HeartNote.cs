@@ -15,12 +15,14 @@ public class HeartNote : MonoBehaviour
 
     private bool isColliding = false;
 
+    //When collider enters Trigger, it checks the tag and sets isColliding to true if it collides with Player GO
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             isColliding = true;
 
+            //setting up bool's for each tag to make sure each player input is specific to each GO
             if (gameObject.CompareTag("Heart"))
             {
                 isHeart = true;
@@ -48,6 +50,7 @@ public class HeartNote : MonoBehaviour
         }
     }
 
+    //sets isColliding to false when trigger exits collider
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -56,6 +59,7 @@ public class HeartNote : MonoBehaviour
         }
     }
 
+    //avoids nullReferenceException if it ever pops up
     void PlayNoteAudio()
     {
         if (NoteAudioSource != null)
@@ -76,6 +80,7 @@ public class HeartNote : MonoBehaviour
     {
         transform.Translate(-Speed * Time.deltaTime, 0, 0);
 
+        //Sets up conditions for each note and how to activate each one individually
         if (Input.GetButtonDown("Space") && isColliding && isHeart)
         {
             PlayNoteAudio();
