@@ -5,8 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] NotePrefabs;
-    private int yMinPos = 2;
-    private int yMaxPos = 5;
+    private float[] yPositions = { 5.84f, 2.5f, -1f, -4f };
     void Start()
     {
         
@@ -15,6 +14,11 @@ public class SpawnManager : MonoBehaviour
      
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            float RandYPos = yPositions[Random.Range(0, yPositions.Length)];
+            int NotePrefabIndex = Random.Range(0, NotePrefabs.Length);
+            Instantiate(NotePrefabs[NotePrefabIndex], new Vector3 (20, RandYPos, 6), NotePrefabs[NotePrefabIndex].transform.rotation);
+        }
     }
 }
