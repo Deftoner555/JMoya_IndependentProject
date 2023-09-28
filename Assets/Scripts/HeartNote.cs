@@ -7,13 +7,19 @@ public class HeartNote : MonoBehaviour
     private AudioSource NoteAudioSource;
     public GameObject HeartNoteGO;
 
+    private bool isHeart = false;
+    private bool isUp = false;
+    private bool isDown = false;
+    private bool isLeft = false;
+    private bool isRight = false;
+
+    private bool isColliding = false;
+
     private void Start()
     {
         // Get the AudioSource component once in the Start method.
         NoteAudioSource = HeartNoteGO.GetComponent<AudioSource>();
     }
-
-    private bool isColliding = false;
 
     //When collider enters Trigger, it checks the tag and sets isColliding to true if it collides with Player GO
     void OnTriggerEnter(Collider other)
@@ -67,12 +73,6 @@ public class HeartNote : MonoBehaviour
             NoteAudioSource.Play();
         }
     }
-
-    private bool isHeart = false;
-    private bool isUp = false;
-    private bool isDown = false;
-    private bool isLeft = false;
-    private bool isRight = false;
 
     private float Speed = 10f;
 
