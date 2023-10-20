@@ -55,6 +55,11 @@ public class GamePlayHeartNote : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isColliding = false;
+            isHeart = false;
+            isUp = false;
+            isDown = false;
+            isLeft = false;
+            isRight = false;
         }
     }
 
@@ -70,26 +75,31 @@ public class GamePlayHeartNote : MonoBehaviour
         if (Input.GetButtonDown("Space") && isColliding && isHeart)
         {
             currentScore = currentScore + addPoints;
+            Debug.Log(currentScore);
         }
 
         else if (Input.GetButtonDown("W") && isColliding && isUp)
         {
             currentScore = currentScore + addPoints;
+            Debug.Log(currentScore);
         }
 
         else if (Input.GetButtonDown("S") && isColliding && isDown)
         {
             currentScore = currentScore + addPoints;
+            Debug.Log(currentScore);
         }
 
         else if (Input.GetButtonDown("A") && isColliding && isLeft)
         {
             currentScore = currentScore + addPoints;
+            Debug.Log(currentScore);
         }
 
         else if (Input.GetButtonDown("D") && isColliding && isRight)
         {
             currentScore = currentScore + addPoints;
+            Debug.Log(currentScore);
         }
     }
 }
