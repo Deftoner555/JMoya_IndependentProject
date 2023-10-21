@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8499062091618586562}
   - component: {fileID: 6616095321917458}
   - component: {fileID: 3331126808035514988}
+  - component: {fileID: 6630794539994887615}
   m_Layer: 0
   m_Name: Gameplay_Heart Note
   m_TagString: Heart
@@ -63,6 +64,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeartNoteGO: {fileID: 8414439793409672369}
   RipplePS: {fileID: 5778514772879536567}
+--- !u!95 &6630794539994887615
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414439793409672369}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bcf10fa24600f8744a3c29c5fe036c8d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1189450993339577340
 PrefabInstance:
   m_ObjectHideFlags: 0

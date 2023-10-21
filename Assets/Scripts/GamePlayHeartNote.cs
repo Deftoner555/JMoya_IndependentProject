@@ -6,6 +6,7 @@ public class GamePlayHeartNote : MonoBehaviour
 {
     public GameObject HeartNoteGO;
     public ParticleSystem RipplePS;
+    private Animator Hitanim;
 
     private bool isHeart = false;
     private bool isUp = false;
@@ -14,6 +15,11 @@ public class GamePlayHeartNote : MonoBehaviour
     private bool isRight = false;
 
     private bool isColliding = false;
+    
+    private void Start()
+    {
+        Hitanim = GetComponent<Animator>();
+    }
 
     //When collider enters Trigger, it checks the tag and sets isColliding to true if it collides with Player GO
     void OnTriggerEnter(Collider other)
@@ -26,6 +32,7 @@ public class GamePlayHeartNote : MonoBehaviour
             if (gameObject.CompareTag("Heart"))
             {
                 isHeart = true;
+                Hitanim.SetTrigger("Hit_trig");
             }
 
             else if (gameObject.CompareTag("Up"))
@@ -36,11 +43,13 @@ public class GamePlayHeartNote : MonoBehaviour
             else if (gameObject.CompareTag("Down"))
             {
                 isDown = true;
+                Hitanim.SetTrigger("Hit_trig");
             }
 
             else if (gameObject.CompareTag("Left"))
             {
                 isLeft = true;
+                Hitanim.SetTrigger("Hit_trig");
             }
 
             else if (gameObject.CompareTag("Right"))
