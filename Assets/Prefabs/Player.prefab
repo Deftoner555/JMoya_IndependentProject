@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5975604301108524156}
-  - component: {fileID: 5975604301108524159}
   - component: {fileID: 5975604301108524155}
   - component: {fileID: 605440841}
   - component: {fileID: 605440847}
+  - component: {fileID: 5798111356316232153}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -36,19 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5975604301108524159
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975604301108524144}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.7613435, y: 1.1368303, z: 1}
-  m_Center: {x: -0.30689707, y: 0.068415284, z: 0}
 --- !u!114 &5975604301108524155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +85,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.58812904
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -174,6 +161,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &5798111356316232153
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975604301108524144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.7871613
+  m_Height: 1.5743226
+  m_Direction: 1
+  m_Center: {x: -0.2871613, y: 0.03428799, z: 0}
 --- !u!1001 &5389367066677585541
 PrefabInstance:
   m_ObjectHideFlags: 0
