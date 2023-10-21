@@ -5,6 +5,7 @@ using UnityEngine;
 public class GamePlayHeartNote : MonoBehaviour
 {
     public GameObject HeartNoteGO;
+    public ParticleSystem RipplePS;
 
     private bool isHeart = false;
     private bool isUp = false;
@@ -64,8 +65,8 @@ public class GamePlayHeartNote : MonoBehaviour
     }
 
     private float Speed = 10f;
-    public static int currentScore;
-    public static int addPoints = 50;
+    private static int currentScore;
+    private static int addPoints = 50;
 
     void Update()
     {
@@ -74,32 +75,37 @@ public class GamePlayHeartNote : MonoBehaviour
         //Sets up conditions for each note and how to activate each one individually
         if (Input.GetButtonDown("Space") && isColliding && isHeart)
         {
-            currentScore = currentScore + addPoints;
+            currentScore += addPoints;
             Debug.Log(currentScore);
+            RipplePS.Play();
         }
 
         else if (Input.GetButtonDown("W") && isColliding && isUp)
         {
-            currentScore = currentScore + addPoints;
+            currentScore += addPoints;
             Debug.Log(currentScore);
+            RipplePS.Play();
         }
 
         else if (Input.GetButtonDown("S") && isColliding && isDown)
         {
-            currentScore = currentScore + addPoints;
+            currentScore += addPoints;
             Debug.Log(currentScore);
+            RipplePS.Play();
         }
 
         else if (Input.GetButtonDown("A") && isColliding && isLeft)
         {
-            currentScore = currentScore + addPoints;
+            currentScore += addPoints;
             Debug.Log(currentScore);
+            RipplePS.Play();
         }
 
         else if (Input.GetButtonDown("D") && isColliding && isRight)
         {
-            currentScore = currentScore + addPoints;
+            currentScore += addPoints;
             Debug.Log(currentScore);
+            RipplePS.Play();
         }
     }
 }
