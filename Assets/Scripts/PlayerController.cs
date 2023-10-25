@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float CursorMoveSpeed = 10f;
     private float minX = -4f, maxX = -4f, minY = -3.77f, maxY = 6.07f;
 
-    private float timer = 15.0f;
+    private float timer = 220f;
     private float currentTime;
     private bool canMove = true;
 
