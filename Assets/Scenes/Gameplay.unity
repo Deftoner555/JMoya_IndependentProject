@@ -178,6 +178,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Note Lines
       objectReference: {fileID: 0}
+    - target: {fileID: 7544051539004256293, guid: f841510b2d3e1e641be63969f055fe1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad3cb515537a20a40aa1d9c65dd98311, type: 2}
+    - target: {fileID: 7544051540178410727, guid: f841510b2d3e1e641be63969f055fe1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad3cb515537a20a40aa1d9c65dd98311, type: 2}
+    - target: {fileID: 7544051540305035262, guid: f841510b2d3e1e641be63969f055fe1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad3cb515537a20a40aa1d9c65dd98311, type: 2}
+    - target: {fileID: 7544051540458561714, guid: f841510b2d3e1e641be63969f055fe1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad3cb515537a20a40aa1d9c65dd98311, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f841510b2d3e1e641be63969f055fe1d, type: 3}
 --- !u!1001 &584093939
