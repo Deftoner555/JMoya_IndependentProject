@@ -15,6 +15,8 @@ public class HeartNote : MonoBehaviour
 
     private bool isColliding = false;
 
+    private float Speed = 10f;
+
     private void Start()
     {
         // Get the AudioSource component once in the Start method.
@@ -73,8 +75,6 @@ public class HeartNote : MonoBehaviour
             NoteAudioSource.Play();
         }
     }
-
-    private float Speed = 10f;
 
     void Update()
     {

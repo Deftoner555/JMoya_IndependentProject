@@ -5,19 +5,25 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float CursorMoveSpeed = 10f;
-    private float minX = -4f, maxX = -4f, minY = -3.77f, maxY = 6.07f;
+    private float minX = 0f, maxX = 0f, minY = -3.77f, maxY = 6.07f;
 
     private float timer = 220f;
     private float currentTime;
     private bool canMove = true;
 
+    private AudioSource gameSong;
+    public GameObject playerGO;
+
     private void Start()
     {
         currentTime = timer;
+        gameSong = playerGO.GetComponent<AudioSource>();
+        gameSong.PlayDelayed(2f);
     }
 
     void Update()
     {
+        Debug.Log(currentTime);
         if (canMove)
         {
             //Player input
