@@ -23,7 +23,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(currentTime);
+        //Debug.Log(currentTime);
+
         if (canMove)
         {
             //Player input
