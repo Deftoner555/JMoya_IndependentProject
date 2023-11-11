@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4e3150cdc987f479461393be5a7d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeartNoteGO: {fileID: 7420590593984149704}
+  NoteGO: {fileID: 7420590593984149704}
   RipplePS: {fileID: 8402717277521915398}
 --- !u!1 &7420590594171345118
 GameObject:

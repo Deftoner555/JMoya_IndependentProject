@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 605440847, guid: 24c46ebd3c160404680c08e73af05aaa, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 605440847, guid: 24c46ebd3c160404680c08e73af05aaa, type: 3}
       propertyPath: m_audioClip
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918075235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfd46a31a7f74a541b279aaf8804fdda, type: 3}
   m_Name: 
@@ -774,6 +774,7 @@ MonoBehaviour:
   - {fileID: 7420590593984149704, guid: 1a59cc92b762e9a4591e85c4eaf7a741, type: 3}
   - {fileID: 7420590593984149704, guid: be03c866a8d64aa42ab3ff1fe99bf759, type: 3}
   - {fileID: 7420590593984149704, guid: 1d3e5ee9d6c1b484097b1607ad1e1877, type: 3}
+  powerUp: {fileID: 4579396148282106107, guid: 399ba0d557b1d4f48a8b835a99a127fb, type: 3}
 --- !u!4 &1289243372
 Transform:
   m_ObjectHideFlags: 0

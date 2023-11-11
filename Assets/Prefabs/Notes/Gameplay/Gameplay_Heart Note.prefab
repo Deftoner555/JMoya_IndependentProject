@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4e3150cdc987f479461393be5a7d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeartNoteGO: {fileID: 8414439793409672369}
+  NoteGO: {fileID: 8414439793409672369}
   RipplePS: {fileID: 5778514772879536567}
 --- !u!95 &6630794539994887615
 Animator:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GamePlayHeartNote : MonoBehaviour
 {
-    public GameObject HeartNoteGO;
+    public GameObject NoteGO;
     public ParticleSystem RipplePS;
     private Animator Hitanim;
 
@@ -13,6 +13,7 @@ public class GamePlayHeartNote : MonoBehaviour
     private bool isDown = false;
     private bool isLeft = false;
     private bool isRight = false;
+    private bool isPowerUp = false;
 
     private bool isColliding = false;
     
@@ -56,6 +57,11 @@ public class GamePlayHeartNote : MonoBehaviour
             {
                 isRight = true;
             }
+
+            else if (gameObject.CompareTag("PowerUp"))
+            {
+                isPowerUp = true;
+            }
         }
     }
 
@@ -70,6 +76,7 @@ public class GamePlayHeartNote : MonoBehaviour
             isDown = false;
             isLeft = false;
             isRight = false;
+            isPowerUp = false;
         }
     }
 
@@ -114,6 +121,13 @@ public class GamePlayHeartNote : MonoBehaviour
         {
             currentScore += addPoints;
             Debug.Log(currentScore);
+            RipplePS.Play();
+        }
+
+        else if (isColliding && isPowerUp)
+        {
+            Debug.Log("Picked up PowerUp");
+            Destroy(GetComponent<MeshRenderer>());
             RipplePS.Play();
         }
     }

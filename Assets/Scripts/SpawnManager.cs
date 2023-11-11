@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] NotePrefabs;
+    public GameObject powerUp;
 
     //set list of Y positions that prefabs should spawn at
     private float[] yPositions = { 5.84f, 2.5f, -1f, -4f };
 
-    private float timer = 13.0f;
+    private float timerNotes = 20.0f;
     private float currentTime;
     private bool canMove = true;
 
@@ -27,10 +29,21 @@ public class SpawnManager : MonoBehaviour
         
     }
 
+    IEnumerator SpawnPowerUp()
+    {
+        yield return new WaitForSecondsRealtime(9);
+
+        float RandYPos = yPositions[Random.Range(0, yPositions.Length)];
+
+        Instantiate(powerUp, new Vector3 (22, RandYPos, 6), powerUp.transform.rotation);
+    }
+
     void Start()
     {
-        currentTime = timer;
-        InvokeRepeating("SpawnNotes", 2f, .5f); 
+        currentTime = timerNotes;
+        InvokeRepeating("SpawnNotes", 2f, .5f);
+
+        StartCoroutine(SpawnPowerUp());
     }
 
     private void Update()
@@ -44,5 +57,6 @@ public class SpawnManager : MonoBehaviour
             currentTime = 0;
             canMove = false;
         }
+
     }
 }
