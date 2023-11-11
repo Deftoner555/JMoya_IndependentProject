@@ -17,11 +17,6 @@ public class GamePlayHeartNote : MonoBehaviour
 
     private bool isColliding = false;
     
-    private void Start()
-    {
-        Hitanim = GetComponent<Animator>();
-    }
-
     //When collider enters Trigger, it checks the tag and sets isColliding to true if it collides with Player GO
     void OnTriggerEnter(Collider other)
     {
@@ -80,9 +75,34 @@ public class GamePlayHeartNote : MonoBehaviour
         }
     }
 
+    IEnumerator DoublePoints()
+    {
+        while (true)
+        {
+            addPoints = 100;
+
+            // Yield execution of this coroutine and return to the main loop until next frame
+            yield return null;
+        }
+    }
+
+    IEnumerator StopDoublePointsCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (doublePointsCoroutine != null)
+            StopCoroutine(doublePointsCoroutine);
+    }
+
     private float Speed = 10f;
     private static int currentScore;
     private static int addPoints = 50;
+
+    private Coroutine doublePointsCoroutine;
+
+    private void Start()
+    {
+        Hitanim = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -128,7 +148,12 @@ public class GamePlayHeartNote : MonoBehaviour
         {
             Debug.Log("Picked up PowerUp");
             Destroy(GetComponent<MeshRenderer>());
-            RipplePS.Play();
+
+            if (doublePointsCoroutine != null)
+                StopCoroutine(doublePointsCoroutine);
+
+            doublePointsCoroutine = StartCoroutine(DoublePoints());
+            StartCoroutine(StopDoublePointsCoroutine(5f));
         }
     }
 }

@@ -31,7 +31,7 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnPowerUp()
     {
-        yield return new WaitForSecondsRealtime(9);
+        yield return new WaitForSecondsRealtime(8);
 
         float RandYPos = yPositions[Random.Range(0, yPositions.Length)];
 
@@ -41,7 +41,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         currentTime = timerNotes;
-        InvokeRepeating("SpawnNotes", 2f, .5f);
+        InvokeRepeating("SpawnNotes", 2f, .6f);
 
         StartCoroutine(SpawnPowerUp());
     }
