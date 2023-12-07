@@ -7,6 +7,7 @@ public class GamePlayHeartNote : MonoBehaviour
     public GameObject NoteGO;
     public ParticleSystem RipplePS;
     private Animator Hitanim;
+    private GameManager gameManager;
 
     private bool isHeart = false;
     private bool isUp = false;
@@ -16,15 +17,82 @@ public class GamePlayHeartNote : MonoBehaviour
     private bool isPowerUp = false;
 
     private bool isColliding = false;
-    
-    //When collider enters Trigger, it checks the tag and sets isColliding to true if it collides with Player GO
+
+    private float Speed = 10f;
+
+    private static int currentScore;
+    private static int addPoints = 50;
+    private Coroutine doublePointsCoroutine;
+
+    private void Start()
+    {
+        Hitanim = GetComponent<Animator>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    }
+
+    void Update()
+    {
+        transform.Translate(-Speed * Time.deltaTime, 0, 0);
+
+        //Sets up conditions for each note and how to activate each one individually
+        if (Input.GetButtonDown("Space") && isColliding && isHeart)
+        {
+            currentScore += addPoints;
+            Debug.Log(currentScore);
+            RipplePS.Play();
+        }
+
+        else if (Input.GetButtonDown("W") && isColliding && isUp)
+        {
+            currentScore += addPoints;
+            Debug.Log(currentScore);
+            RipplePS.Play();
+        }
+
+        else if (Input.GetButtonDown("S") && isColliding && isDown)
+        {
+            currentScore += addPoints;
+            Debug.Log(currentScore);
+            RipplePS.Play();
+        }
+
+        else if (Input.GetButtonDown("A") && isColliding && isLeft)
+        {
+            currentScore += addPoints;
+            Debug.Log(currentScore);
+            RipplePS.Play();
+        }
+
+        else if (Input.GetButtonDown("D") && isColliding && isRight)
+        {
+            currentScore += addPoints;
+            Debug.Log(currentScore);
+            RipplePS.Play();
+        }
+
+        else if (isColliding && isPowerUp)
+        {
+            Debug.Log("Picked up PowerUp");
+            Destroy(GetComponent<MeshRenderer>());
+
+            if (doublePointsCoroutine != null)
+                StopCoroutine(doublePointsCoroutine);
+
+            doublePointsCoroutine = StartCoroutine(DoublePoints());
+            StartCoroutine(StopDoublePointsCoroutine(5f));
+        }
+    }
+
+    //When collider enters Trigger, it checks the tag and sets isColliding
+    //to true if it collides with Player GO
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             isColliding = true;
 
-            //setting up bool's for each tag to make sure each player input is specific to each GO
+            //setting up bool's for each tag to make sure each player input is
+            //specific to each GO
             if (gameObject.CompareTag("Heart"))
             {
                 isHeart = true;
@@ -81,7 +149,8 @@ public class GamePlayHeartNote : MonoBehaviour
         {
             addPoints = 100;
 
-            // Yield execution of this coroutine and return to the main loop until next frame
+            // Yield execution of this coroutine and return to the main loop
+            // until next frame
             yield return null;
         }
     }
@@ -91,69 +160,5 @@ public class GamePlayHeartNote : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (doublePointsCoroutine != null)
             StopCoroutine(doublePointsCoroutine);
-    }
-
-    private float Speed = 10f;
-    private static int currentScore;
-    private static int addPoints = 50;
-
-    private Coroutine doublePointsCoroutine;
-
-    private void Start()
-    {
-        Hitanim = GetComponent<Animator>();
-    }
-
-    void Update()
-    {
-        transform.Translate(-Speed * Time.deltaTime, 0, 0);
-
-        //Sets up conditions for each note and how to activate each one individually
-        if (Input.GetButtonDown("Space") && isColliding && isHeart)
-        {
-            currentScore += addPoints;
-            Debug.Log(currentScore);
-            RipplePS.Play();
-        }
-
-        else if (Input.GetButtonDown("W") && isColliding && isUp)
-        {
-            currentScore += addPoints;
-            Debug.Log(currentScore);
-            RipplePS.Play();
-        }
-
-        else if (Input.GetButtonDown("S") && isColliding && isDown)
-        {
-            currentScore += addPoints;
-            Debug.Log(currentScore);
-            RipplePS.Play();
-        }
-
-        else if (Input.GetButtonDown("A") && isColliding && isLeft)
-        {
-            currentScore += addPoints;
-            Debug.Log(currentScore);
-            RipplePS.Play();
-        }
-
-        else if (Input.GetButtonDown("D") && isColliding && isRight)
-        {
-            currentScore += addPoints;
-            Debug.Log(currentScore);
-            RipplePS.Play();
-        }
-
-        else if (isColliding && isPowerUp)
-        {
-            Debug.Log("Picked up PowerUp");
-            Destroy(GetComponent<MeshRenderer>());
-
-            if (doublePointsCoroutine != null)
-                StopCoroutine(doublePointsCoroutine);
-
-            doublePointsCoroutine = StartCoroutine(DoublePoints());
-            StartCoroutine(StopDoublePointsCoroutine(5f));
-        }
     }
 }

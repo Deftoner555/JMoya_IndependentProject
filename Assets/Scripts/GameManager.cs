@@ -1,25 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public TextMeshProUGUI scoreText;
+
+    private int score = 0;
+
     void Start()
     {
         
     }
 
-    public static int playerScore = 0;
-
-    public static void AddPoints(int points)
-    {
-        playerScore += points;
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        Debug.Log(playerScore);
+        
     }
 }
