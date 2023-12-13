@@ -6,24 +6,19 @@ public class GamePlayHeartNote : MonoBehaviour
 {
     public GameObject NoteGO;
     public ParticleSystem RipplePS;
-    private Animator Hitanim;
-    private GameManager gameManager;
+    public int pointValue;
 
+    private GameManager gameManager;
     private bool isHeart = false;
     private bool isUp = false;
     private bool isDown = false;
     private bool isLeft = false;
     private bool isRight = false;
-
     private bool isColliding = false;
-
     private float Speed = 10f;
-
-    public int pointValue;
 
     private void Start()
     {
-        Hitanim = GetComponent<Animator>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
@@ -77,7 +72,6 @@ public class GamePlayHeartNote : MonoBehaviour
             if (gameObject.CompareTag("Heart"))
             {
                 isHeart = true;
-                Hitanim.SetTrigger("Hit_trig");
             }
 
             else if (gameObject.CompareTag("Up"))
@@ -88,13 +82,11 @@ public class GamePlayHeartNote : MonoBehaviour
             else if (gameObject.CompareTag("Down"))
             {
                 isDown = true;
-                Hitanim.SetTrigger("Hit_trig");
             }
 
             else if (gameObject.CompareTag("Left"))
             {
                 isLeft = true;
-                Hitanim.SetTrigger("Hit_trig");
             }
 
             else if (gameObject.CompareTag("Right"))

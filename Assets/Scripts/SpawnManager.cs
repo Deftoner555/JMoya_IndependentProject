@@ -14,21 +14,6 @@ public class SpawnManager : MonoBehaviour
     private float currentTime;
     private bool canMove = true;
 
-    void SpawnNotes()
-    {
-        if (canMove)
-        {
-            //select a random Y position from the list
-            float RandYPos = yPositions[Random.Range(0, yPositions.Length)];
-
-            int NotePrefabIndex = Random.Range(0, NotePrefabs.Length);
-            Instantiate(NotePrefabs[NotePrefabIndex], new Vector3(20, RandYPos, 6), 
-                NotePrefabs[NotePrefabIndex].transform.rotation);
-        }
-        
-    }
-
-
     void Start()
     {
         currentTime = timerNotes;
@@ -48,4 +33,20 @@ public class SpawnManager : MonoBehaviour
         }
 
     }
+
+    void SpawnNotes()
+    {
+        if (canMove)
+        {
+            //select a random Y position from the list
+            float RandYPos = yPositions[Random.Range(0, yPositions.Length)];
+
+            int NotePrefabIndex = Random.Range(0, NotePrefabs.Length);
+            Instantiate(NotePrefabs[NotePrefabIndex], new Vector3(20, RandYPos, 6), 
+                NotePrefabs[NotePrefabIndex].transform.rotation);
+        }
+        
+    }
+
+   
 }

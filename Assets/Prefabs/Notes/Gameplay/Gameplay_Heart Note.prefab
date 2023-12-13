@@ -65,6 +65,7 @@ MonoBehaviour:
   NoteGO: {fileID: 8414439793409672369}
   RipplePS: {fileID: 5778514772879536567}
   pointValue: 150
+  missSound: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
 --- !u!95 &6630794539994887615
 Animator:
   serializedVersion: 5
