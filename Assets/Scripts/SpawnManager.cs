@@ -6,7 +6,6 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] NotePrefabs;
-    public GameObject powerUp;
 
     //set list of Y positions that prefabs should spawn at
     private float[] yPositions = { 5.84f, 2.5f, -1f, -4f };
@@ -29,21 +28,11 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    IEnumerator SpawnPowerUp()
-    {
-        yield return new WaitForSecondsRealtime(8);
-
-        float RandYPos = yPositions[Random.Range(0, yPositions.Length)];
-
-        Instantiate(powerUp, new Vector3 (22, RandYPos, 6), powerUp.transform.rotation);
-    }
 
     void Start()
     {
         currentTime = timerNotes;
         InvokeRepeating("SpawnNotes", 2f, .6f);
-
-        StartCoroutine(SpawnPowerUp());
     }
 
     private void Update()

@@ -1090,12 +1090,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NotePrefabs:
-  - {fileID: 7420590593984149704, guid: f2f48d2bab3caef40a5ea1ef9b0ea69b, type: 3}
   - {fileID: 8414439793409672369, guid: 3900aef3f1f976d4a93c9cca0e2df961, type: 3}
+  - {fileID: 7420590593984149704, guid: 1d3e5ee9d6c1b484097b1607ad1e1877, type: 3}
+  - {fileID: 7420590593984149704, guid: f2f48d2bab3caef40a5ea1ef9b0ea69b, type: 3}
   - {fileID: 7420590593984149704, guid: 1a59cc92b762e9a4591e85c4eaf7a741, type: 3}
   - {fileID: 7420590593984149704, guid: be03c866a8d64aa42ab3ff1fe99bf759, type: 3}
-  - {fileID: 7420590593984149704, guid: 1d3e5ee9d6c1b484097b1607ad1e1877, type: 3}
-  powerUp: {fileID: 4579396148282106107, guid: 399ba0d557b1d4f48a8b835a99a127fb, type: 3}
+  powerUp: {fileID: 0}
 --- !u!4 &1289243372
 Transform:
   m_ObjectHideFlags: 0

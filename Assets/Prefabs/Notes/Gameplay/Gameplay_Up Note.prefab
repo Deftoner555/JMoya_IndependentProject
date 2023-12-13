@@ -65,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NoteGO: {fileID: 7420590593984149704}
   RipplePS: {fileID: 4293836785868959557}
+  pointValue: 100
 --- !u!1 &7420590594171345118
 GameObject:
   m_ObjectHideFlags: 0

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NoteGO: {fileID: 7420590593984149704}
   RipplePS: {fileID: 1694194769884609206}
+  pointValue: 100
 --- !u!95 &5723537298690637694
 Animator:
   serializedVersion: 5
