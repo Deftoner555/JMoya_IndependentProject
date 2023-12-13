@@ -37,7 +37,7 @@ public class GamePlayHeartNote : MonoBehaviour
         //Sets up conditions for each note and how to activate each one individually
         if (Input.GetButtonDown("Space") && isColliding && isHeart)
         {
-            currentScore += addPoints;
+            gameManager.UpdateScore(currentScore += addPoints);
             Debug.Log(currentScore);
             RipplePS.Play();
         }

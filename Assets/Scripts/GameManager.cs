@@ -8,16 +8,21 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-
     private int score = 0;
 
     void Start()
     {
+        UpdateScore(0);
+    }
+
+    private void Update()
+    {
         
     }
 
-    void Update()
+    public void UpdateScore(int scoreDelta)
     {
-        
+        score += scoreDelta;
+        scoreText.text = "Heartbeats: " + score;
     }
 }
