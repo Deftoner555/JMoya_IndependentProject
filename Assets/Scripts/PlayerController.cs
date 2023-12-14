@@ -45,5 +45,5 @@ public class PlayerController : MonoBehaviour
             gameManager.showRestart();
         }
     }
-    
+
 }

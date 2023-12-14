@@ -16,10 +16,12 @@ public class GamePlayHeartNote : MonoBehaviour
     private bool isRight = false;
     private bool isColliding = false;
     private float Speed = 10f;
+    private AudioSource sounds;
 
     private void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        sounds = NoteGO.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -31,30 +33,35 @@ public class GamePlayHeartNote : MonoBehaviour
         {
             gameManager.UpdateScore(pointValue);
             RipplePS.Play();
+            PlayNoteAudio();
         }
 
         else if (Input.GetButtonDown("W") && isColliding && isUp)
         {
             gameManager.UpdateScore(pointValue);
             RipplePS.Play();
+            PlayNoteAudio();
         }
 
         else if (Input.GetButtonDown("S") && isColliding && isDown)
         {
             gameManager.UpdateScore(pointValue);
             RipplePS.Play();
+            PlayNoteAudio();
         }
 
         else if (Input.GetButtonDown("A") && isColliding && isLeft)
         {
             gameManager.UpdateScore(pointValue);
             RipplePS.Play();
+            PlayNoteAudio();
         }
 
         else if (Input.GetButtonDown("D") && isColliding && isRight)
         {
             gameManager.UpdateScore(pointValue);
             RipplePS.Play();
+            PlayNoteAudio();
         }
 
     }
@@ -108,6 +115,14 @@ public class GamePlayHeartNote : MonoBehaviour
             isDown = false;
             isLeft = false;
             isRight = false;
+        }
+    }
+
+    void PlayNoteAudio()
+    {
+        if (sounds != null)
+        {
+            sounds.Play();
         }
     }
 
