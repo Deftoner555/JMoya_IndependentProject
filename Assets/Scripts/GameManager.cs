@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string SE_resultScreen = "ResultScreen";
 
     public TextMeshProUGUI scoreText;
+    public GameObject restartButton;
     private int score = 0;
 
     void Start()
@@ -44,5 +45,10 @@ public class GameManager : MonoBehaviour
     public void toResult()
     {
         SceneManager.LoadScene(SE_resultScreen);
+    }
+
+    public void showRestart()
+    {
+        restartButton.gameObject.SetActive(true);
     }
 }

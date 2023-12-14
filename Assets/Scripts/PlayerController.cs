@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float CursorMoveSpeed = 10f;
     private float minX = 0f, maxX = 0f, minY = -3.77f, maxY = 6.07f;
-
-    private float timer = 220f;
+    private float timer = 24f;
     private float currentTime;
     private bool canMove = true;
+    private GameManager gameManager;
 
-    private AudioSource gameSong;
     public GameObject playerGO;
+    public float CursorMoveSpeed = 10f;
 
     private void Start()
     {
         currentTime = timer;
-        gameSong = playerGO.GetComponent<AudioSource>();
-        gameSong.PlayDelayed(2f);
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -44,6 +42,7 @@ public class PlayerController : MonoBehaviour
         {
             currentTime = 0;
             canMove = false;
+            gameManager.showRestart();
         }
     }
     

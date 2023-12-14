@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         currentTime = timerNotes;
-        InvokeRepeating("SpawnNotes", 2f, .6f);
+        InvokeRepeating("SpawnNotes", 3f, .5f);
     }
 
     private void Update()
