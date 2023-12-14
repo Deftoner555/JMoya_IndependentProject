@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private string SE_titleScreen = "TitleScreen";
+    [SerializeField] private string SE_howToPlay = "HowToPlay";
     [SerializeField] private string SE_gameplay = "Gameplay";
     [SerializeField] private string SE_resultScreen = "ResultScreen";
 
@@ -28,6 +29,11 @@ public class GameManager : MonoBehaviour
     public void toTitle()
     {
         SceneManager.LoadScene(SE_titleScreen);
+    }
+
+    public void toHowToPlay()
+    {
+        SceneManager.LoadScene(SE_howToPlay);
     }
 
     public void toGameplay()

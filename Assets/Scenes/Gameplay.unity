@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: playerGO
       value: 
       objectReference: {fileID: 781642989}
+    - target: {fileID: 5975604301108524155, guid: 24c46ebd3c160404680c08e73af05aaa, type: 3}
+      propertyPath: CursorMoveSpeed
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 5975604301108524156, guid: 24c46ebd3c160404680c08e73af05aaa, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -575,7 +579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -192.1, y: -43.2}
+  m_AnchoredPosition: {x: -192.1, y: -66}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675692309
@@ -600,8 +604,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Heartbeats: 0000'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -625,15 +629,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 4
   m_wordSpacing: 0
@@ -661,7 +665,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -57.484985, y: 0, z: -100.14978, w: 0}
+  m_margin: {x: -416.7035, y: 0, z: -100.14978, w: -24.251099}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -825,6 +829,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0f1a5700c6d704f9f82a331c1d0b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SE_titleScreen: TitleScreen
+  SE_howToPlay: HowToPlay
+  SE_gameplay: Gameplay
+  SE_resultScreen: ResultScreen
   scoreText: {fileID: 675692309}
 --- !u!1 &918075235
 GameObject:
@@ -1095,7 +1103,6 @@ MonoBehaviour:
   - {fileID: 7420590593984149704, guid: f2f48d2bab3caef40a5ea1ef9b0ea69b, type: 3}
   - {fileID: 7420590593984149704, guid: 1a59cc92b762e9a4591e85c4eaf7a741, type: 3}
   - {fileID: 7420590593984149704, guid: be03c866a8d64aa42ab3ff1fe99bf759, type: 3}
-  powerUp: {fileID: 0}
 --- !u!4 &1289243372
 Transform:
   m_ObjectHideFlags: 0
